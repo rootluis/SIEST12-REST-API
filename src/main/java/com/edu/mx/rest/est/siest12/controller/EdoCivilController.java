@@ -30,6 +30,7 @@ public class EdoCivilController {
 
     @PostMapping("/add")
     public EdoCivil addEdoCivil(@RequestBody EdoCivil objEdoCivil){
+        objEdoCivil.setIdEdoCivil(0);
         edoCivilService.saveEdoCivil(objEdoCivil);
         return objEdoCivil;
     }
