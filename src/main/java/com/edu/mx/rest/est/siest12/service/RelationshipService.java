@@ -10,9 +10,7 @@ public interface RelationshipService {
 
     public Relationship getRelationship(int idRelationShip);
 
-    public Relationship saveRelationship(Relationship objRelationship);
-
-    public Relationship updateRelationship(Relationship objRelationship);
+    public void saveRelationship(Relationship objRelationship);
 
     public void deleteRelationship(int idRelationship);
 }

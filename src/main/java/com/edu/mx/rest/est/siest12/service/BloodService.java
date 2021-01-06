@@ -10,7 +10,7 @@ public interface BloodService {
 
     public Blood getBlood(int idBlood);
 
-    public Blood saveBlood(Blood objBlood);
+    public void saveBlood(Blood objBlood);
 
     public void deleteBlood(int idBlood);
 }

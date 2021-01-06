@@ -39,9 +39,8 @@ public class BloodServiceImpl implements BloodService {
     }
 
     @Override
-    public Blood saveBlood(Blood objBlood) {
+    public void saveBlood(Blood objBlood) {
         bloodRepository.save(objBlood);
-        return objBlood;
     }
 
     @Override

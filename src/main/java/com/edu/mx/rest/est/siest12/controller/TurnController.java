@@ -33,14 +33,14 @@ public class TurnController {
         return theTurn;
     }
 
-    @PostMapping("/turn")
+    @PostMapping("/add-turn")
     public Turn saveTurn(@RequestBody Turn theTurn){
         theTurn.setIdTurn(0);
         turnService.saveTurn(theTurn);
         return theTurn;
     }
 
-    @PutMapping("/turn")
+    @PutMapping("/update-turn")
     public Turn updateTurn(@RequestBody Turn theTurn){
         turnService.saveTurn(theTurn);
         return theTurn;
@@ -50,11 +50,10 @@ public class TurnController {
     public String deleteTurn(@PathVariable int idTurn){
         Turn theTurn = turnService.getTurn(idTurn);
 
-        if (theTurn == null){
-            throw new RuntimeException("No se encontro el turno a Eliminar");
+        if (theTurn != null){
+            turnService.deleteTurn(idTurn);
         }
 
-        turnService.deleteTurn(idTurn);
         return "El turno se ha eliminado de forma correcta";
     }
 

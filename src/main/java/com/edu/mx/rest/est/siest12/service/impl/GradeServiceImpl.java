@@ -39,9 +39,8 @@ public class GradeServiceImpl implements GradeService {
     }
 
     @Override
-    public Grade addGrade(Grade objGrade) {
+    public void addGrade(Grade objGrade) {
         gradeRepository.save(objGrade);
-        return null;
     }
 
     @Override

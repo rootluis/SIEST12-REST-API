@@ -10,7 +10,7 @@ public interface GradeService {
 
     public Grade getGrade(int idGrade);
 
-    public Grade addGrade(Grade objGrade);
+    public void addGrade(Grade objGrade);
 
     public void deleteGrade(int idGrade);
 }

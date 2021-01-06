@@ -10,7 +10,7 @@ public interface EdoCivilService {
 
     public EdoCivil getEdoCivil(int idEdoCivil);
 
-    public EdoCivil saveEdoCivil(EdoCivil objEdoCivil);
+    public void saveEdoCivil(EdoCivil objEdoCivil);
 
     public void deleteEdoCivil(int idEdoCivil);
 }
