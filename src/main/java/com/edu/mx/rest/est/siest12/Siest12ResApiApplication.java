@@ -10,4 +10,5 @@ public class Siest12ResApiApplication {
 		SpringApplication.run(Siest12ResApiApplication.class, args);
 	}
 
+
 }
