@@ -42,9 +42,11 @@ public class OccupationController {
     @DeleteMapping("/delete/{idOccupation}")
     public String deleteOccupation(@PathVariable int idOccupation){
         Occupation objOccupation = occupationService.getOccupation(idOccupation);
+
         if (objOccupation != null){
             occupationService.deleteOccupation(idOccupation);
         }
+
         return "La ocupacion se ha eliminado de forma correcta";
     }
 }

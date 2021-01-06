@@ -43,7 +43,12 @@ public class EdoCivilController {
 
     @DeleteMapping("/edo-delete/{idEdoCivil}")
     public String deleteEdoCivil(@PathVariable int idEdoCivil){
-        edoCivilService.deleteEdoCivil(idEdoCivil);
+        EdoCivil objEdoCivil = edoCivilService.getEdoCivil(idEdoCivil);
+
+        if (objEdoCivil != null){
+            edoCivilService.deleteEdoCivil(idEdoCivil);
+        }
+
         return "El estado civil se elimino de forma correcta";
     }
 }

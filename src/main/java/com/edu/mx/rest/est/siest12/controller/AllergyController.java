@@ -51,7 +51,7 @@ public class AllergyController {
 		return theAllergy;
 	}
 
-	@PostMapping("/allergies")
+	@PostMapping("/add-allergy")
 	public Allergy addAllergy(@RequestBody Allergy objAllergy) {
 		LOGGER.info(MessageFormatter.format(Constants.LOG_FULL, CLASS_NAME, "getAllergy()").getMessage());
 		objAllergy.setCdAlergia(0);
@@ -59,7 +59,7 @@ public class AllergyController {
 		return objAllergy;
 	}
 
-	@PutMapping("/allergies")
+	@PutMapping("/update-allergy")
 	public Allergy updateAllergy(@RequestBody Allergy objAllergy) {
 		LOGGER.info(MessageFormatter.format(Constants.LOG_FULL, CLASS_NAME, "updateAllergy()").getMessage());
 		allergyService.save(objAllergy);
@@ -70,12 +70,14 @@ public class AllergyController {
 	public String deleteAllergy(@PathVariable int idAllergy) {
 		LOGGER.info(MessageFormatter.format(Constants.LOG_FULL, "Ejecutando " + CLASS_NAME, "deleteAllergy()").getMessage());
 		Allergy theAllergy = allergyService.findAlergia(idAllergy);
-		if (theAllergy == null) {
+		if (theAllergy != null) {
+			allergyService.delete(idAllergy);
+		}else{
 			LOGGER.info(MessageFormatter.format(Constants.LOG_FULL, "No es posible eliminar la clave de alergia: " + idAllergy, "debido a que no se ha encontrado en la BD").getMessage());
 			throw new RuntimeException("No es posible eliminar la clave de alergia: " + idAllergy
 					+ " debido a que no se ha encontrado en la BD");
 		}
-		allergyService.delete(idAllergy);
+
 		return "La alergia se ha eliminado exitosamente";
 	}
 

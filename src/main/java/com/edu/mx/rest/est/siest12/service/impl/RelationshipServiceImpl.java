@@ -34,16 +34,8 @@ public class RelationshipServiceImpl implements RelationshipService {
     }
 
     @Override
-    public Relationship saveRelationship(Relationship objRelationship) {
-        objRelationship.setIdRelationship(0);
+    public void saveRelationship(Relationship objRelationship) {
         relationshipRepository.save(objRelationship);
-        return objRelationship;
-    }
-
-    @Override
-    public Relationship updateRelationship(Relationship objRelationship) {
-        relationshipRepository.save(objRelationship);
-        return objRelationship;
     }
 
     @Override

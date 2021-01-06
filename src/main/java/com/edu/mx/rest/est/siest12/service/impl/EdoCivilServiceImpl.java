@@ -38,9 +38,8 @@ public class EdoCivilServiceImpl implements EdoCivilService {
     }
 
     @Override
-    public EdoCivil saveEdoCivil(EdoCivil objEdoCivil) {
+    public void saveEdoCivil(EdoCivil objEdoCivil) {
         edoCivilRepository.save(objEdoCivil);
-        return objEdoCivil;
     }
 
     @Override

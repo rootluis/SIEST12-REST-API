@@ -37,14 +37,19 @@ public class RelationshipController {
     // update obj
     @PutMapping("/update")
     public Relationship updateRelationship(@RequestBody Relationship objRelationship){
-        relationshipService.updateRelationship(objRelationship);
+        relationshipService.saveRelationship(objRelationship);
         return objRelationship;
     }
 
     // delete obj
     @DeleteMapping("/delete/{idRelationship}")
     public String deleteRelationship(@PathVariable int idRelationship){
-        relationshipService.deleteRelationship(idRelationship);
+        Relationship objRelationship = relationshipService.getRelationship(idRelationship);
+
+        if (objRelationship != null){
+            relationshipService.deleteRelationship(idRelationship);
+        }
+
         return "El parentesco se elimino de forma correcta";
     }
 }

@@ -44,6 +44,7 @@ public class GradeController {
     @DeleteMapping("/delete/{idGrade}")
     public String deleteGrade(@PathVariable int idGrade){
         Grade objGrade = gradeService.getGrade(idGrade);
+
         if (objGrade != null){
             gradeService.deleteGrade(idGrade);
         }

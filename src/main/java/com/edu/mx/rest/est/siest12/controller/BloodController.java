@@ -41,7 +41,12 @@ public class BloodController {
 
     @DeleteMapping("/delete/{idBlood}")
     public String deleteBlood(@PathVariable int idBlood){
-        bloodService.deleteBlood(idBlood);
+        Blood objBlood = bloodService.getBlood(idBlood);
+
+        if (objBlood != null){
+            bloodService.deleteBlood(idBlood);
+        }
+
         return "El registro se a liminado de forma correcta en tabla SANGRE";
     }
 
