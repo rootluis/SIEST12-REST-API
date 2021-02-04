@@ -23,6 +23,7 @@ public class ScholarshipController {
     public List<Scholarship> getScholarships(){
         return scholarshipService.getScholarships();
     }
+    
     //Obtener solo un objeto de beca
     @GetMapping("/list/{idScholarship}")
     public Scholarship getScholarship(@PathVariable int idScholarship){
@@ -36,6 +37,7 @@ public class ScholarshipController {
         scholarshipService.addScholarship(objScholarship);
         return objScholarship;
     }
+    
     //Actualizar beca
     @PutMapping("/update")
     public Scholarship updateScholarship(@RequestBody Scholarship objScholarship){
